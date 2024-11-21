@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Local</title>
+    <style>
+        /* Estilos globais */
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(0,176,255);
+            background: linear-gradient(rgba(124, 124, 124, 0.247), rgba(119, 119, 119, 0.7)), url(img/fundo.png);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Botão de voltar */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #007bff;
+            border: 2px solid #007bff;
+            background-color: transparent;
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Contêiner principal */
+        .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 85%;
+            max-width: 1200px;
+            gap: 40px;
+        }
+
+        /* Estilos para os cards */
+        .info-card, .counter-container {
+            border-radius: 15px;
+            padding: 40px;
+            width: 50%;
+            max-width: 500px;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .info-card:hover, .counter-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos específicos do card de informações */
+        .info-card {
+            background-color: #ffffff;
+            color: #333;
+            border: 2px solid #d0e7ff;
+        }
+        .info-card h2 {
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d0e7ff;
+            padding-bottom: 10px;
+        }
+        .info-card p {
+            margin: 12px 0;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        /* Estilos específicos do contador */
+        .counter-container {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+        }
+        .counter-container h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+            color: #ffffff;
+        }
+        .counter-value {
+            font-size: 56px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        #limite {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    
+    <a class="back-button" onclick="window.history.back();">&larr; Voltar</a>
+
+    <div class="container-fluid">
+        <!-- Card de informações (lado esquerdo) -->
+        <div class="info-card">
+            <h2>Informações do Local</h2>
+            <p><strong>Capacidade Máxima:</strong></p>
+            <p><strong>Endereço:</strong></p>
+            <p><strong>Tipo de Câmera:</strong></p>
+            <p><strong>Status:</strong></p>
+        </div>
+
+        <!-- Contador (lado direito) -->
+        <div class="container-fluid">
+            <button class="btn btn-outline-secondary back-button" onclick="window.history.back();">
+                &larr; Voltar
+            </button>
+            <div class="counter-container">
+                <h1>Contagem:</h1>
+                <div class="counter-value"><span id="cont">0</span><span id="limite">/20</span></div> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
